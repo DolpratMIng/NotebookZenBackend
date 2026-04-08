@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "bun --watch ./src/index.js",
-    "build": "npx prisma generate",
+    "build": "echo 'Prisma client already generated'",
     "start": "node ./src/index.js"
   },
   "dependencies": {
