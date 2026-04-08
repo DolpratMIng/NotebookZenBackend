@@ -4,7 +4,9 @@ const prisma = require("../prismaClient");
 const webhookRoutes = require("./routes/webhooks/clerk");
 const app = express();
 const port = 8000;
+
 const { requireAuth } = require("./middleware/auth");
+require("dotenv").config();
 
 // Mount webhook routes
 app.use("/api/webhooks", webhookRoutes);
@@ -13,7 +15,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.FRONTEND_URL,
   }),
 );
 
